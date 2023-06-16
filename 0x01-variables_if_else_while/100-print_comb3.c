@@ -14,7 +14,7 @@ int main(void)
 
 	for (m = 48; m < 58; m++)
 	{
-		n = 49;
+		n = m + 1;
 		while (n < 58)
 		{
 			putchar(m);
@@ -26,6 +26,8 @@ int main(void)
 			}
 			if (m == 56 && n == 57)
 				putchar('\n');
+
+			n++;
 		}
 	}
 	return (0);
