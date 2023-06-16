@@ -29,14 +29,14 @@ int main(void)
 						putchar(' ');
 						putchar(p);
 						putchar(q);
+						putchar(',');
+						putchar(' ');
 					}
 					if (m == 57 && n == 56)
 					{
 						putchar('\n');
 						break;
 					}
-					putchar(',');
-					putchar(' ');
 				}
 			}
 		}
