@@ -29,7 +29,7 @@ for (m = 48; m < 58; m++)
 					putchar(' ');
 					putchar(p);
 					putchar(q);
-					if (m == 9 && n == 8 && p == 9)
+					if (m == 57 && n == 56 && p == 57)
 					{
 						putchar('\n');
 						break;
