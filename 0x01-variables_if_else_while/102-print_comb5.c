@@ -32,7 +32,7 @@ int main(void)
 						putchar(',');
 						putchar(' ');
 					}
-					if (m == 57 && n == 56)
+					if (r == 98 && s == 99)
 					{
 						putchar('\n');
 						break;
