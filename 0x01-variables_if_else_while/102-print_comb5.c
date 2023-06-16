@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	int m, n, p, q;
+	int m, n, p, q, r, s;
 
 	for (m = 48; m < 58; m++)
 	{
@@ -18,19 +18,23 @@ int main(void)
 		{
 			for (p = m; p < 58; p++)
 			{
-				for (q = n + 1; q < 58; q++)
+				for (q = 48; q < 58; q++)
 				{
-					putchar(m);
-					putchar(n);
-					putchar(' ');
-					putchar(p);
-					putchar(q);
+					r = (m * 10) + n;
+					s = (p * 10) + q;
+					if (r < s)
+					{
+						putchar(m);
+						putchar(n);
+						putchar(' ');
+						putchar(p);
+						putchar(q);
+					}
 					if (m == 57 && n == 56)
 					{
 						putchar('\n');
 						break;
 					}
-
 					putchar(',');
 					putchar(' ');
 				}
