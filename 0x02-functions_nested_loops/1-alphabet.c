@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * main - function entry-point
+ * print_alphabet -  function entry-point
  *
  * Description: 'prints alphabet in lowercase followed by \n'
  * No parameters hence void
