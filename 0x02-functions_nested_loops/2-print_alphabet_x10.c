@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * print_alphabet -  function entry-point
+ * print_alphabet_x10 -  function entry-point
  *
  * Description: 'prints alphabet in lowercase x10 followed by \n'
  * No parameters hence void
