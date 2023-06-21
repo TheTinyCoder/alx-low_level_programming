@@ -20,7 +20,8 @@ void times_table(void)
 			z = x * y;
 			if (z < 10)
 			{
-				_putchar(' ');
+				if (y != 0)
+					_putchar(' ');
 				_putchar(z + 48);
 			}
 			else
