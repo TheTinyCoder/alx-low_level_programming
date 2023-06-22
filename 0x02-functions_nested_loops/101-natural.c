@@ -30,6 +30,7 @@ int main(void)
 		y = z / w;
 		_putchar(y + 48);
 		 z -= y * w;
+		 w /= 10;
 	}
 	_putchar(z + 48);
 	_putchar('\n');
