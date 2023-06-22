@@ -23,7 +23,7 @@ int main(void)
 		w += v;
 	}
 
-	_putchar('\n');
+	fprintf(stdout, "\n");
 
 	return (0);
 }
