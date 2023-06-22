@@ -11,12 +11,14 @@
 
 int main(void)
 {
-	int v = 1, w = 2, x;
+	long int v = 1, w = 2, x;
 
 	for (x = 1; x < 26; x++)
 	{
-		fprintf(stdout, "%d, ", v);
-		fprintf(stdout, "%d, ", w);
+		fprintf(stdout, "%lu, ", v);
+		fprintf(stdout, "%lu", w);
+		if (x != 25)
+			fprintf(stdout, ", ");
 		v += w;
 		w += v;
 	}
