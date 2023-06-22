@@ -7,76 +7,47 @@
  *
  * Description: 'prints from n to 98'
  * @n: integer
- * Return: addition result
+ * Return: void
  */
 
 void print_to_98(int n)
 {
-	int w, x, y, z;
+	int v, w, x, y, z;
 
-	if (n <= 98)
+	z = (n > 98) ? 97 : 99;
+
+	v = n;
+	while (v != z)
 	{
-		for (y = n; y < 99; y++)
+		w = 1;
+		x = abs(v);
+		while (x > 9)
 		{
-			x = abs(y);
-			w = 1;
-			while (x > 9)
-			{
-				w *= 10;
-				x /= 10;
-			}
-			x = y;
-			while (w > 1)
-			{
-				z = x / w;
-				if (y < 0)
-					_putchar(45);
-				
-				_putchar(abs(z) + 48);
-				x -= (z * w); 
-				w /= 10;
-			}
-			if (y < 0 && y > -10)
-				_putchar(45);
-			_putchar(abs(x) + 48);
-			if (y == 98)
-			{
-				_putchar('\n');
-				break;
-			}
-			_putchar(',');
-			_putchar(' ');
-
+			w *= 10;
+			x /= w;
 		}
-	}
-	if (n > 98)
-	{
-		for (y = n; y > 97; y--)
+		if (v < 0)
+			_putchar(45);
+		x = v;
+		while (w > 1)
 		{
-			x = y;
-			w = 1;
-			while (x > 9)
-			{
-				w *= 10;
-				x /= 10;
-			}
-			x = y;
-			while (w > 1)
-			{
-				z = x / w;
-				_putchar(z + 48);
-				x -= (z * w); 
-				w /= 10;
-			}
-			_putchar(x + 48);
-			if (y == 98)
-			{
-				_putchar('\n');
-				break;
-			}
-			_putchar(',');
-			_putchar(' ');
-
+			y = x / w;
+			_putchar(abs(y) + 48);
+			x -= (y * w);
+			w /= 10;
 		}
+		_putchar(abs(x) + 48);
+		if (v == 98)
+		{
+			_putchar('\n');
+			break;
+		}
+		_putchar(',');
+		_putchar(' ');
+
+		if (z == 99)
+			v++;
+		else
+			v--;
 	}
 }
