@@ -42,7 +42,8 @@ void print_times_table(int n)
 					break;
 				}
 				_putchar(',');
-				_putchar(' ');
+				if ( x < 100)
+					_putchar(' ');
 				if (spaces == 3)
 				{
 					_putchar(' ');
