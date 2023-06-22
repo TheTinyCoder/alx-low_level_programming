@@ -23,5 +23,7 @@ int main(void)
 		w += v;
 	}
 
+	_putchar('\n');
+
 	return (0);
 }
