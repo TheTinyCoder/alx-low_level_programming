@@ -15,12 +15,8 @@ int main(void)
 
 	for (x = 1; x < 26; x++)
 	{
-		fprintf(stdout, "%d", v);
-		_putchar(',');
-		_putchar(' ');
-		fprintf(stdout, "%d", w);
-		_putchar(',');
-		_putchar(' ');
+		fprintf(stdout, "%d, ", v);
+		fprintf(stdout, "%d, ", w);
 		v += w;
 		w += v;
 	}
