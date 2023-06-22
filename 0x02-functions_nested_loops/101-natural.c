@@ -5,7 +5,7 @@
  *
  * Description: 'prints sum of multiples of 3/5 below 1024 followed by \n'
  * No parameters hence void
- * Return: void
+ * Return: 0
  */
 
 int main(void)
@@ -33,4 +33,6 @@ int main(void)
 	}
 	_putchar(z + 48);
 	_putchar('\n');
+
+	return 0;
 }
