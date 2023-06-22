@@ -21,11 +21,8 @@ void print_times_table(int n)
 			{
 				v = y * z, w = 1;
 				while (v > 9)
-				{
 					w *= 10, v /= 10;
-				}
-				v = y * z;
-				x = y * (z + 1);
+				v = y * z, x = y * (z + 1);
 				if (x < 10)
 					spaces = 3;
 				if (x > 9 && x < 100)
@@ -42,7 +39,7 @@ void print_times_table(int n)
 					break;
 				}
 				_putchar(',');
-				if ( x < 100)
+				if (x < 100)
 					_putchar(' ');
 				if (spaces == 3)
 				{
