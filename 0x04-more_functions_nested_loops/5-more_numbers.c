@@ -3,7 +3,7 @@
 /**
  * more_numbers - function entrypoint
  *
- * Description: prints from 0 to 14, followed by a new line
+ * Description: prints from 0 to 14, followed by a new line 10x
  * No parameter hence void
  * Return: void
  */
