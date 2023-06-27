@@ -10,7 +10,7 @@
 
 int _atoi(char *s)
 {
-	int number = 0, place_value = 1, plus = 0, minus = 0, x = 0, y;
+	int number = 0, place_value = 1, plus = 0, minus = 0, x = 0, y, z = 0;
 
 	while (s[x] != '\0')
 	{
@@ -33,11 +33,21 @@ int _atoi(char *s)
 		{
 			number += ((s[y] - 48) * place_value);
 			place_value /= 10;
+			
+			if (number == 2147483640 && s[y + 1] == 56)
+			{
+				z = 1;
+				break;
+			}
+
 		}
 	}
 
 	if (minus > plus)
 		number *= -1;
+
+	if (z == 1)
+		number -= 8;
 
 	return (number);
 }
