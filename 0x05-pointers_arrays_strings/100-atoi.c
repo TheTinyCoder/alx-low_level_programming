@@ -10,12 +10,10 @@
 
 int _atoi(char *s)
 {
-	unsigned int number = 0, place_value = 1, plus = 0, minus = 0, x = 0, y;
+	unsigned int number = 0, place_value = 1, minus = 0, x = 0, y;
 
 	while (s[x] != '\0')
 	{
-		if (s[x] == '+')
-			plus++;
 		if (s[x] == '-')
 			minus++;
 		if (s[x] > 47 && s[x] < 58)
@@ -36,7 +34,7 @@ int _atoi(char *s)
 		}
 	}
 
-	if (minus > plus)
+	if (minus % 2 != 0)
 		number *= -1;
 
 	return (number);
