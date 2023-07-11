@@ -11,12 +11,12 @@
 
 int main(void)
 {
-	long unsigned int v = 1, w = 2, x = 2;
+	unsigned long long int v = 1, w = 2, x = 2;
 
 	while (x <= 98)
 	{
-		fprintf(stdout, "%lu, ", v);
-		fprintf(stdout, "%lu", w);
+		fprintf(stdout, "%llu, ", v);
+		fprintf(stdout, "%llu", w);
 
 		if (x != 98)
 			fprintf(stdout, ", ");
