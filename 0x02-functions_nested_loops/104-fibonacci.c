@@ -11,14 +11,14 @@
 
 int main(void)
 {
-	unsigned int v = 1, w = 2, x = 2;
+	long unsigned int v = 1, w = 2, x = 2;
 
-	while (x <= 96)
+	while (x <= 98)
 	{
-		fprintf(stdout, "%u, ", v);
-		fprintf(stdout, "%u", w);
+		fprintf(stdout, "%lu, ", v);
+		fprintf(stdout, "%lu", w);
 
-		if (x != 96)
+		if (x != 98)
 			fprintf(stdout, ", ");
 		v += w;
 		w += v;
