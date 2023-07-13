@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <math.h>
 #include "main.h"
 
 /**
@@ -11,17 +12,27 @@
 
 int main(void)
 {
-	unsigned long int v = 1, w = 2, x = 2;
+	unsigned long int  v = 1, v1 = 0, w = 2, w1 = 0, x = 2, y;
 
+	y = (unsigned long int) pow(10, 19);
 	while (x <= 98)
 	{
+		if (v1 > 0)
+			fprintf(stdout, "%lu", v1);
 		fprintf(stdout, "%lu, ", v);
+		if (w1 > 0)
+			fprintf(stdout, "%lu", w1);
 		fprintf(stdout, "%lu", w);
 
 		if (x != 98)
 			fprintf(stdout, ", ");
-		v += w;
-		w += v;
+		v = (v % y) + (w % y);
+		v1 += (v / y) + (w / y) + w1;
+		v %= y;
+
+		w = (w % y) + v;
+		w1 += (w / y) + (v / y) + v1;
+		w %= y;
 		x += 2;
 	}
 
