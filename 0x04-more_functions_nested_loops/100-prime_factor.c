@@ -25,10 +25,9 @@ int main(void)
 		{
 			j = (k + 1);
 		}
-		
 		i++;
 	}
-	
+
 	printf("%ld\n", j);
 
 	return (0);
