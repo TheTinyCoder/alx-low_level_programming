@@ -14,7 +14,7 @@ int main(void)
 {
 	long int i = 1, j = 0, k = 0, l = 612852475143;
 
-	while (i < (long int)sqrt((long double)l))
+	while ((i * 6) < (l / 3))
 	{
 		k = (i * 6);
 		if (l % (k - 1) == 0)
