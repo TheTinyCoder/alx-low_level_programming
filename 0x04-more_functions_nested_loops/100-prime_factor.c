@@ -12,23 +12,31 @@
 
 int main(void)
 {
-	long int i = 1, j = 0, k = 0, l = 612852475143;
+	long int l, m, n = 612852475143;
 
-	while ((i * 6) < (l / 3))
+	while (n % 3 == 0)
 	{
-		k = (i * 6);
-		if (l % (k - 1) == 0)
-		{
-			j = (k - 1);
-		}
-		if (l % (k + 1) == 0)
-		{
-			j = (k + 1);
-		}
-		i++;
+		m = 3;
+		n /= 3;
 	}
 
-	printf("%ld\n", j);
+	for (l = 5; l <= sqrt(n); l += 6)
+	{
+		while (n % l == 0)
+		{
+			m = l;
+			n /= l;
+		}
+		while (n % (l + 2) == 0)
+		{
+			m = (l + 2);
+			n /= (l + 2);
+		}
+	}
 
+	if (n > 4)
+		m = n;
+
+	printf("%ld\n", m);
 	return (0);
 }
