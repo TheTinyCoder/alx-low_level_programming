@@ -11,10 +11,8 @@
 char *rot13(char *s)
 {
 	int i, j;
-	char k[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char l[] = "NOPQRSTUVWXYZABCDEFGHIJKLM";
-	char m[] = "abcdefghijklmnopqrstuvwxyz";
-	char n[] = "nopqrstuvwxyzabcdefghijklm";
+	char k[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char l[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -23,11 +21,6 @@ char *rot13(char *s)
 			if (s[i] == k[j])
 			{
 				s[i] = l[j];
-				break;
-			}
-			else if (s[i] == m[j])
-			{
-				s[i] = n[j];
 				break;
 			}
 		}
