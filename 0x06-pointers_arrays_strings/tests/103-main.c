@@ -13,6 +13,7 @@ int main(void)
         char r[100];
         char r2[10];
         char r3[11];
+	char r4[100];
         char *res;
 
         res = infinite_add(n, m, r, 100);
@@ -55,5 +56,17 @@ int main(void)
         {
                 printf("%s + %s = %s\n", n, m, res);
         }
+	n = "10";
+	m = "89";
+        res = infinite_add(n, m, r4, 100);
+        if (res == 0)
+        {
+                printf("Error\n");
+        }
+        else
+        {
+                printf("%s + %s = %s\n", n, m, res);
+        }
+
         return (0);
 }

@@ -24,8 +24,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	for (l = size_r - 2; l >= 0; l--)
 		r[l] = 0;
 	l = i > j ? i : j;
+	l = (n1[0] + n2[0]) - 96 > 9 ? l : l - 1;
 	i--, j--;
-	printf("i: %d, j: %d, m: %d \n", i, j, l);
 	for (; l >= 0; l--)
 	{
 		m = i >= 0 ? n1[i] : 48;
