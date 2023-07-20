@@ -35,9 +35,7 @@ void print_buffer(char *b, int size)
 			}
 			for (p = m; p < m + 10; p++)
 			{
-				if (p >= size)
-					printf(" ");
-				else
+				if (p < size)
 				{
 					if (isprint(b[p]) != 0)
 						printf("%c", b[p]);
