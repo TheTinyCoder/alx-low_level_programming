@@ -4,7 +4,7 @@
 /**
  * *_strstr -  function entry-point
  *
- * Description: 'finds 1st occurrence of char in string needle in haystack'
+ * Description: 'finds 1st occurrence of string needle in haystack'
  * @haystack: pointer to string
  * @needle: pointer to string
  * Return: pointer to first occurrence or null
@@ -14,6 +14,8 @@ char *_strstr(char *haystack, char *needle)
 {
 	unsigned int i = 0, j = 0, k, l = 0, m;
 
+	if (needle[0] == '\0')
+		return (haystack);
 	for (; needle[i] != '\0'; i++)
 		;
 	for (; haystack[j] != '\0'; j++)
@@ -37,5 +39,5 @@ char *_strstr(char *haystack, char *needle)
 	}
 	if (l == 0)
 		return (NULL);
-	return ((haystack + (l - i - 1)));
+	return ((haystack + (l - i)));
 }
