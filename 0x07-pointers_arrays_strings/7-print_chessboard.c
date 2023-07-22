@@ -1,12 +1,11 @@
 #include "main.h"
 
 /**
- * *_strstr -  function entry-point
+ * print_chessboard -  function entry-point
  *
- * Description: 'finds 1st occurrence of string needle in haystack'
- * @haystack: pointer to string
- * @needle: pointer to string
- * Return: pointer to first occurrence or null
+ * Description: 'prints the chessboard'
+ * @a: pointer to array of char arrays
+ * Return: void
  */
 
 void print_chessboard(char (*a)[8])
