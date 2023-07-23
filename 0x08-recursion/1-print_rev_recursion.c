@@ -11,6 +11,7 @@
 void _print_rev_recursion(char *s)
 {
 	char *t;
+
 	t = s;
 	if (*s == '\0')
 	{
