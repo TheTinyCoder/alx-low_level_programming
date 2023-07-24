@@ -5,7 +5,7 @@
  *
  * Description: 'prints a string in reverse'
  * @s: pointer to a string
- * Return: void
+ * Return: integer
  */
 
 int _strlen_recursion(char *s)

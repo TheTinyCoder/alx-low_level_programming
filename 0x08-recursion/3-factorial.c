@@ -5,7 +5,7 @@
  *
  * Description: 'returns the factorial of a given number'
  * @n: integer
- * Return: void
+ * Return: integer
  */
 
 int factorial(int n)
