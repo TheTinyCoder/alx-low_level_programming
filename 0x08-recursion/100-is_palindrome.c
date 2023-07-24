@@ -3,8 +3,9 @@
 /**
  * count_char -  function entry-point
  *
- * Description: 'prints a string in reverse'
+ * Description: 'counts characters in s'
  * @s: pointer to a string
+ * @count: integer
  * Return: char
  */
 
@@ -21,7 +22,9 @@ int count_char(char *s, int count)
  * compare -  function entry-point
  *
  * Description: 'compares characters in s'
- * @s: string
+ * @s: pointer to a string
+ * @count: integer
+ * @index: integer
  * Return: 1 if s is palindrome, 0 otherwise
  */
 
