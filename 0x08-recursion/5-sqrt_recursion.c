@@ -3,7 +3,6 @@
  * sqrt_by_subtraction - function entry-point
  *
  * Description: 'finds square root by repeated subtraction'
-
  * @n: integer to find square-root of
  * @count: number of subtractions
  * @sub: integer to subtract from
@@ -33,9 +32,10 @@ int sqrt_by_subtraction(int n, int count, int sub)
 int _sqrt_recursion(int n)
 {
 	int count, sub;
+
 	if (n < 0)
 		return (-1);
 	count = 0;
 	sub = 1;
-	return sqrt_by_subtraction(n, count, sub);
+	return (sqrt_by_subtraction(n, count, sub));
 }
