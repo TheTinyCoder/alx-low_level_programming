@@ -39,7 +39,7 @@ int compare(char *s, int count, int index)
 		count--;
 		return (compare(s, count, index));
 	}
-	return (0);	
+	return (0);
 }
 
 /**
