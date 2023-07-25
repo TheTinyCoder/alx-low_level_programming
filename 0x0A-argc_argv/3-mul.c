@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * main - function entry-point
@@ -15,6 +16,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
-	printf("%d\n", ((*argv[1] - 48) * (*argv[2] - 48)));
+	printf("%d\n", (atoi(argv[1]) * atoi(argv[2])));
 	return (0);
 }
