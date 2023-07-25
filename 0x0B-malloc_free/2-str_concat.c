@@ -17,14 +17,20 @@ char *str_concat(char *s1, char *s2)
 	char *a;
 
 	if (s1 == NULL)
-		*s1 = '\0';
+		i = 1;
+	else
+	{
+		for (; s1[i] != '\0'; i++)
+			;
+		i++;
+	}
 	if (s2 == NULL)
-		*s2 = '\0';
-	for (; s1[i] != '\0'; i++)
-		;
-	i++;
-	for (; s2[j] != '\0'; j++)
-		;
+		j = 1;
+	else
+	{
+		for (; s2[j] != '\0'; j++)
+			;
+	}
 	a = (char *)malloc(sizeof(char) * (i + j));
 
 	if (a == NULL)
