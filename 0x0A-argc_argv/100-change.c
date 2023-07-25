@@ -11,7 +11,7 @@
 
 int main(int argc, char *argv[])
 {
-	int a [] = {25, 10, 5, 2, 1}, b, c, d = 0, e;
+	int a [] = {25, 10, 5, 2, 1}, b, c, d = 0;
 
 	if (argc < 2 || argc > 2)
 	{
@@ -28,19 +28,15 @@ int main(int argc, char *argv[])
 
 	for (b = 0; b < 5; b++)
 	{
-		if (c >= a[b])
+		if (c == 1)
 		{
-			d = (c / a[b]);
-			for (e = 0; e < 5; e++)
-			{
-				if (c % a[b] >= a[e])
-				{
-					d += ((c % a[b]) / a[e]);
-					d += ((c % a[b]) % a[e]);
-					break;
-				}
-			}
+			d += 1;
 			break;
+		}
+		while (c >= a[b])
+		{
+			d += (c / a[b]);
+			c %= a[b];
 		}
 	}
 	printf("%d\n", d);
