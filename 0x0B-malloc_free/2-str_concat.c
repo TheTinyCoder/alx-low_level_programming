@@ -16,6 +16,12 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i = 0, j = 0, k = 0, l;
 	char *a;
 
+	if (s1 == NULL && s2 == NULL)
+		return (NULL);
+	if (s1 == NULL)
+		return (s2);
+	if (s2 == NULL)
+		return (s1);
 	for (; s1[i] != '\0'; i++)
 		;
 	i++;
