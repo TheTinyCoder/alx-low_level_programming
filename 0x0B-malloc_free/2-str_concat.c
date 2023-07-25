@@ -42,10 +42,13 @@ char *str_concat(char *s1, char *s2)
 			a[k] = s1[k];
 	}
 	l = 0;
-	for (; k <= i + j; k++)
+	if (j > 1)
 	{
-		a[k] = s2[l];
-		l++;
+		for (; k <= i + j; k++)
+		{
+			a[k] = s2[l];
+			l++;
+		}
 	}
 	return (a);
 }
