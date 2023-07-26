@@ -5,9 +5,9 @@
 /**
  * **alloc_grid - function entry-point
  *
- * Description:  concatenates two strings
- * @s1: pointer to string
- * @s2: pointer to string
+ * Description: returns a pointer to a 2D grid
+ * @height: rows of grid
+ * @width: columns of grid
  * Return: NULL on failure, pointer to string otherwise
  */
 
