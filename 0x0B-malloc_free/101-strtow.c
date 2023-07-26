@@ -3,61 +3,75 @@
 #include <stdlib.h>
 
 /**
+ * word_count - function entry-point
+ *
+ * Description: counts words in a string
+ * @str: pointer to string
+ * Return: number of words
+ */
+
+int word_count(char *str)
+{
+	int i, j = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		if (str[i] != ' ' && (str[i - 1] == ' ' || i == 0))
+		{
+			j++;
+		}
+	}
+	return (j);
+}
+
+/**
  * **strtow - function entry-point
  *
- * Description: frees a 2D grid previously allocated
- * @ac: argument count
- * @av: array of strings
+ * Description: splits a string into words
+ * @str: pointer to string
  * Return: pointer to string
  */
 
 char **strtow(char *str)
 {
-	int i, j, k = 0, l, len, word_count = 0;
+	int i, j, k = 0, l, len, words;
 	char **a;
 
 	if (str == NULL || *str == '\0')
 		return (NULL);
-
-	a = (char **)malloc(sizeof(char *) * 1);
+	words = word_count(str);
+	if (words == 0)
+		return (NULL);
+	a = (char **)malloc(sizeof(char *) * (words + 1));
+	if (a == NULL)
+		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] != ' ' && str[i - 1] == ' ')
+		len = 0;
+		if (str[i] != ' ' && (str[i - 1] == ' ' || i == 0))
 		{
 			j = i;
-			l = i;
-			len = 0;
-			for (; str[j] != '\0'; j++)
+			for (; str[j] != ' '; j++)
 			{
-				i++;
 				len++;
-				if (str[j] == ' ')
+				if (str[j + 1] == ' ')
 				{
-					word_count += 1;
-					a = (char **)realloc(a, sizeof(char *) * word_count);
-					if (a == NULL)
+					a[k] = (char *)malloc(sizeof(char) * (len + 1));
+					for (l = 0; str[i] != ' '; l++)
 					{
-						free(a);
-						return (NULL);
-					}
-					a[word_count - 1] = (char *)malloc(sizeof(char) * (len + 1));
-					for (k = 0; k < len; k++)
+					a[k][l] = str[i], i++;
+					if (i == j + 1)
 					{
-						if (k + 1 == len)
-						{
-							a[word_count - 1][k] = '\0';
-							break;
-						}
-						a[word_count - 1][k] = str[l];
-						l++;
+						a[k][l + 1] = '\0';
+						break;
 					}
-					i--;
+					}
+					k++;
 					break;
 				}
 			}
 		}
 	}
-	a = (char **)realloc(a, sizeof(char *) * (word_count + 1));
-	a[word_count] = NULL;
+	a[words] = NULL;
 	return (a);
 }
