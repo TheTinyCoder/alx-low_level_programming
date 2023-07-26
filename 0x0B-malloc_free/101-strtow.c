@@ -56,7 +56,7 @@ char **strtow(char *str)
 				len++;
 				if (str[j + 1] == ' ')
 				{
-					a[k] = (char *)malloc(sizeof(char) * (len + 1));
+					a[k] = (char *)malloc(sizeof(char) * (len - 3));
 					for (l = 0; ; l++)
 					{
 					a[k][l] = str[i], i++;
@@ -72,6 +72,6 @@ char **strtow(char *str)
 			}
 		}
 	}
-	a[words] = NULL;
+	a[k] = NULL;
 	return (a);
 }
