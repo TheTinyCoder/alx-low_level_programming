@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * *malloc_chcked - function entry-point
+ * *malloc_checked - function entry-point
  *
  * Description: allocates memory using malloc
  * @b: allocation size
