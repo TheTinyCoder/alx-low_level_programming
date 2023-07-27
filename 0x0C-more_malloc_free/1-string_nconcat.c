@@ -31,42 +31,21 @@ unsigned int _strlen(char *s)
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-	unsigned int a, b = 0, s1_len = 1, s2_len = 0;
+	char *s, *empty;
+	unsigned int a = 0, b;
 
-	s1_len = s1 == NULL || *s1 == '\0' ? 1 : _strlen(s1);
-	s2_len = s2 == NULL || *s2 == '\0' ? 0 : _strlen(s2);
-	n = n > s2_len ? s2_len : n;
-	n = s1_len > 1 ? n : 0;
-	s = malloc(sizeof(char) * (s1_len + n));
-	printf("%u : %u - %u\n", s1_len, n, s1_len + n);
+	empty = "";
+	s1 = s1 == NULL ? empty : s1;
+	s2 = s2 == NULL ? empty : s2;
+	s = malloc(sizeof(char) * (_strlen(s1) + n));
 	if (s == NULL)
 		return (NULL);
-	if (s1_len == 1)
-		s[0] = '\0';
-	if (s1_len > 1)
+	for (; s1[a] != '\0'; a++)
+		s[a] = s1[a];
+	for (b = 0; b < n && s2[b] != '\0'; b++)
 	{
-		for (a = 0; ; a++)
-		{
-			if (s1[a] == '\0')
-			{
-				b = a;
-				break;
-			}
-			s[a] = s1[a];
-		}
-	}
-	if (s1_len > 1 && s2_len > 0)
-	{
-		for (a = 0; a < n; a++)
-		{
-			if (s2[a] == '\0')
-			{
-				s[b] = '\0';
-				break;
-			}
-			s[b] = s2[a], b++;
-		}
+		s[a] = s2[b];
+		a++;
 	}
 	return (s);
 }
