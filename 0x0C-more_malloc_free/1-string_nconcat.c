@@ -34,10 +34,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *s;
 	unsigned int a, b = 0, s1_len = 1, s2_len = 0;
 
-	s1_len = s1 == NULL ? 1 : _strlen(s1);
-	s2_len = s2 == NULL ? 0 : _strlen(s2);
+	s1_len = s1 == NULL || *s1 == '\0' ? 1 : _strlen(s1);
+	s2_len = s2 == NULL || *s2 == '\0' ? 0 : _strlen(s2);
 	n = n > s2_len ? s2_len : n;
+	n = s1_len > 1 ? n : 0;
 	s = malloc(sizeof(char) * (s1_len + n));
+	printf("%u : %u - %u\n", s1_len, n, s1_len + n);
 	if (s == NULL)
 		return (NULL);
 	if (s1_len == 1)
