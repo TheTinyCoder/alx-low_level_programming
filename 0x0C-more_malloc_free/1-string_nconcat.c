@@ -3,6 +3,23 @@
 #include <stdlib.h>
 
 /**
+ * _strlen - function entry-point
+ *
+ * Description: finds length of string
+ * @s: pointer to string
+ * Return: length of string
+ */
+
+unsigned int _strlen(char *s)
+{
+	unsigned int a, b = 0;
+
+	for (a = 0; s[a] != '\0'; a++)
+		b++;
+	return (b);
+}
+
+/**
  * *string_nconcat - function entry-point
  *
  * Description: concatenates two strings
@@ -17,37 +34,35 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *s;
 	unsigned int a, b = 0, s1_len = 1, s2_len = 0;
 
-	if (s1 == NULL)
-		*s1 = '\0';
-	if (s2 == NULL)
-		*s2 = '\0';
-	for (a = 0; s1[a] != '\0'; a++)
-		s1_len++;
-	for (a = 0; s2[a] != '\0'; a++)
-		s2_len++;
-	if (n > s2_len)
-		n = s2_len;
+	s1_len = s1 == NULL ? 0 : _strlen(s1);
+	s2_len = s2 == NULL ? 0 : _strlen(s2);
+	n = n > s2_len ? s2_len : n;
 	s = malloc(sizeof(char) * (s1_len + n));
 	if (s == NULL)
 		return (NULL);
-	for (a = 0; ; a++)
+	if (s1_len > 0)
 	{
-		if (s1[a] == '\0')
+		for (a = 0; ; a++)
 		{
-			b = a;
-			break;
+			if (s1[a] == '\0')
+			{
+				b = a;
+				break;
+			}
+			s[a] = s1[a];
 		}
-		s[a] = s1[a];
 	}
-	for (a = 0; a < n; a++)
+	if (s2_len > 0)
 	{
-		if (s2[a] == '\0')
+		for (a = 0; a < n; a++)
 		{
-			s[b] = '\0';
-			break;
+			if (s2[a] == '\0')
+			{
+				s[b] = '\0';
+				break;
+			}
+			s[b] = s2[a], b++;
 		}
-		s[b] = s2[a];
-		b++;
 	}
 	return (s);
 }
