@@ -3,7 +3,7 @@
 /**
  * *_memset -  function entry-point
  *
- * Description: 'adds two numbers'
+ * Description: 'fills memory with a constant byte'
  * @s: pointer to string
  * @b: character
  * @n: integer
