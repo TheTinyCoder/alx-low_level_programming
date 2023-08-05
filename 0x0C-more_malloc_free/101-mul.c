@@ -154,7 +154,7 @@ int main(int argc, char *argv[])
 {
 	int a = 0, b = 0, *c, *d, e, f, g, **result, *sum_result;
 
-	if (argc < 3)
+	if (argc < 3 || argc > 3)
 		printf("Error\n"), exit(98);
 	if (!is_digit(argv[1]))
 		printf("Error\n"), exit(98);
