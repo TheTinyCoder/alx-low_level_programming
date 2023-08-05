@@ -19,8 +19,10 @@ int is_digit(char *arr)
 		if (arr[i] < 48 || arr[i] > 57)
 			return (0);
 	}
-	if (arr[0] == 0)
+	/*
+	 * if (arr[0] == 0)
 		return (1);
+		*/
 	return (i);
 }
 
@@ -127,12 +129,14 @@ void print_array(int *arr, int size)
 
 	for (e = 0; e < size; e++)
 	{
-		if (arr[0] == 0 && arr[1] == 0)
+		/*
+		 * if (arr[0] == 0 && arr[1] == 0)
 		{
 			printf("0");
 			break;
 		}
-		if (arr[e] == 0 && e == 0)
+		*/
+		if (arr[e] == 0 && e == 0 && arr[e + 1] != 0)
 			continue;
 		printf("%d", arr[e]);
 	}
