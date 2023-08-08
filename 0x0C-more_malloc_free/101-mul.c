@@ -157,12 +157,14 @@ int main(int argc, char *argv[])
 {
 	int a = 0, b = 0, *c, *d, e, f, g, **result, *sum_result;
 
-	if (argc < 3 || argc > 3)
+	if (argc != 3)
 		printf("Error\n"), exit(98);
 	if (!is_digit(argv[1]))
 		printf("Error\n"), exit(98);
 	if (!is_digit(argv[2]))
 		printf("Error\n"), exit(98);
+	if (argv[1][0] == 48 || argv[2][0] == 48)
+		printf("0\n"), exit(98);
 	a = is_digit(argv[1]), b = is_digit(argv[2]), g = a + b;
 	c = malloc(sizeof(int) * a), d = malloc(sizeof(int) * b);
 	if (c == NULL || d == NULL)
