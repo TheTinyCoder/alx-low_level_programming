@@ -130,11 +130,6 @@ void print_array(int *arr, int size)
 
 	for (e = 0; e < size; e++)
 	{
-		if (arr[0] == 0 && arr[1] == 0)
-		{
-			printf("0");
-			break;
-		}
 		if (arr[e] == 0 && e == 0 && arr[e + 1] != 0)
 			continue;
 		printf("%d", arr[e]);
@@ -166,7 +161,7 @@ int main(int argc, char *argv[])
 	if (argv[1][0] == 48 || argv[2][0] == 48)
 		printf("0\n"), exit(0);
 	a = is_digit(argv[1]), b = is_digit(argv[2]), g = a + b;
-	if (a > 12 || b > 12)
+	if (a + b > 19)
 		printf("\n"), exit(0);
 	c = malloc(sizeof(int) * a), d = malloc(sizeof(int) * b);
 	if (c == NULL || d == NULL)
