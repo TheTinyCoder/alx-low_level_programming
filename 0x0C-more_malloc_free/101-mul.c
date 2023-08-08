@@ -161,8 +161,8 @@ int main(int argc, char *argv[])
 	if (argv[1][0] == 48 || argv[2][0] == 48)
 		printf("0\n"), exit(0);
 	a = is_digit(argv[1]), b = is_digit(argv[2]), g = a + b;
-	if (g > 9)
-		printf("\n"), exit(98);
+	if (g > 8)
+		printf("\n"), exit(0);
 	c = malloc(sizeof(int) * a), d = malloc(sizeof(int) * b);
 	if (c == NULL || d == NULL)
 	{
