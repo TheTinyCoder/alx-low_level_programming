@@ -74,7 +74,7 @@ int **multiply_matrix(int *a, int *b, int a_c, int b_d)
 				tens = 0;
 			}
 			w[x][y] = ((a[index_a] * b[index_b]) + temp) % 10;
-			temp += (a[index_a] * b[index_b]) / 10;
+			temp = (a[index_a] * b[index_b]) / 10;
 			index_a--;
 		}
 		index_b--;
@@ -95,7 +95,7 @@ int **multiply_matrix(int *a, int *b, int a_c, int b_d)
 
 int *sum_matrix(int **matrix, int width, int height)
 {
-	int *a, temp = 0, w, x, y;
+	int *a, temp = 0, w, x, y, z;
 
 	a = malloc(sizeof(int) * width);
 	if (a == NULL)
@@ -106,8 +106,9 @@ int *sum_matrix(int **matrix, int width, int height)
 	{
 		for (y = width - 1; y >= 0; y--)
 		{
-			a[y] = (a[y] + matrix[x][y] + temp) % 10;
-			temp += a[y] / 10;
+			z = (a[y] + matrix[x][y] + temp);
+			a[y] = z % 10;
+			temp = z / 10;
 		}
 	}
 	return (a);
@@ -175,20 +176,10 @@ int main(int argc, char *argv[])
 	for (e = 0; e < a; e++)
 	{
 		c[e] = (argv[1][e] - 48);
-		if (c[0] == 0)
-		{
-			a = 1;
-			break;
-		}
 	}
 	for (f = 0; f < b; f++)
 	{
 		d[f] = (argv[2][f] - 48);
-		if (d[0] == 0)
-		{
-			b = 1;
-			break;
-		}
 	}
 	result = a > b ? multiply_matrix(c, d, a, b) : multiply_matrix(d, c, b, a);
 	sum_result = a > b ? sum_matrix(result, g, b) : sum_matrix(result, g, a);
