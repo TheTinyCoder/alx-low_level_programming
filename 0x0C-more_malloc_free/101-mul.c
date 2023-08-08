@@ -162,7 +162,7 @@ int main(int argc, char *argv[])
 		printf("0\n"), exit(0);
 	a = is_digit(argv[1]), b = is_digit(argv[2]), g = a + b;
 	if (a + b > 19)
-		printf("\n"), exit(0);
+		printf("Error\n"), exit(98);
 	c = malloc(sizeof(int) * a), d = malloc(sizeof(int) * b);
 	if (c == NULL || d == NULL)
 	{
