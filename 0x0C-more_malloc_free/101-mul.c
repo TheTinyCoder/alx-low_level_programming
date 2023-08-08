@@ -130,13 +130,11 @@ void print_array(int *arr, int size)
 
 	for (e = 0; e < size; e++)
 	{
-		/*
-		 * if (arr[0] == 0 && arr[1] == 0)
+		if (arr[0] == 0 && arr[1] == 0)
 		{
 			printf("0");
 			break;
 		}
-		*/
 		if (arr[e] == 0 && e == 0 && arr[e + 1] != 0)
 			continue;
 		printf("%d", arr[e]);
@@ -184,6 +182,9 @@ int main(int argc, char *argv[])
 	result = a > b ? multiply_matrix(c, d, a, b) : multiply_matrix(d, c, b, a);
 	sum_result = a > b ? sum_matrix(result, g, b) : sum_matrix(result, g, a);
 	print_array(sum_result, g);
+	g = a > b ? b : a;
+	for (f = 0; f < g; f++)
+		free(result[f]);
 	free(c), free(d), free(result), free(sum_result);
 	return (0);
 }
