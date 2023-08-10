@@ -19,5 +19,6 @@ int main(void)
     my_dog.age = .0f;
     my_dog.owner = NULL;
     print_dog(&my_dog);
+    print_dog(NULL);
     return (0);
 }
