@@ -3,7 +3,7 @@
 /**
  * print_name - function entry-point
  *
- * Description: prints name using function sppecified
+ * Description: prints name using function specified
  * @name: name to print
  * @f: pointer to function to use
  * Return: void
