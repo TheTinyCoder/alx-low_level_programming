@@ -13,10 +13,9 @@
 
 void print_string(char *s)
 {
-	if (s == NULL)
-		printf("(nil)");
-	else
-		printf("%s", s);
+	s == NULL ?
+		printf("(nil)")
+		: printf("%s", s);
 }
 
 
