@@ -1,21 +1,28 @@
-; ----------------------------------------------------------------------------------------
-; Writes "Hello, Holberton" to the console using only system calls. Runs on 64-bit Linux only.
-; To assemble and run:
+; 64-bit program that prints Hello, Holberton
+; Compiled with: 
+; 'nasm -f elf64 101-hello_holberton.asm && 
+; gcc -no-pie -std=gnu89 101-hello_holberton.o -o hello'
+; Declare some external functions
 ;
-;   nasm -f elf64 101-hello_holberton.asm && gcc -no-pie -std=gnu89 101-hello_holberton.o -o hello
-; ----------------------------------------------------------------------------------------
+        extern	printf		; the C function, to be called
 
-          global    main
+        SECTION .data		; Data section, initialized variables
 
-          section   .text
-main:     mov       rax, 1                  ; system call for write
-          mov       rdi, 1                  ; file handle 1 is stdout
-          mov       rsi, message            ; address of string to output
-          syscall                           ; invoke operating system to do the write
-          mov       rax, 60                 ; system call for exit
-          xor       rdi, rdi                ; exit code 0
-          syscall                           ; invoke operating system to exit
+	msg db "Hello, Holberton", 0
+	fmt db "%s", 10, 0 	; The printf format, "\n",'0'
 
-          section   .data
-          message db  "Hello, Holberton", 10; note the newline at the end
-          len equ     $ - message           ; length of string
+
+        SECTION .text           ; Code section.
+
+        global main		; the standard gcc entry point
+main:				; the program label for the entry point
+        push    rbp		; set up stack frame
+        mov     rdi, fmt
+
+	mov	rsi, msg	; put msg from store into register
+        call    printf		; Call C function
+
+        pop     rbp		; take down stack frame ("leave" op)
+
+	mov	rax,0		;  normal, no error, return value
+	ret			; return
