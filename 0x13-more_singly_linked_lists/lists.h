@@ -2,9 +2,9 @@
 #define LISTS_H
 #include <stdlib.h>
 /**
- * nodePtr - Typedef for struct list_s
+ * nodePtr - Typedef for struct listint_s
  */
-typedef struct list_s *nodePtr;
+typedef struct listint_s *nodePtr;
 /**
  * struct listint_s - singly linked list
  * @n: integer
