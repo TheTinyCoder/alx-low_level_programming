@@ -7,7 +7,7 @@
  *
  * Description: adds a node to beginning of a listint_t list
  * @head: double pointer to singly linked list
- * @str: pointer to string
+ * @n: pointer to integer
  * Return: address of node added to linked list
  */
 
