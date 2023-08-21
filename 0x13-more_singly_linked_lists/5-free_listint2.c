@@ -14,13 +14,16 @@ void free_listint2(listint_t **head)
 {
 	nodePtr temp1, temp2;
 
-	temp1 = (*head)->next;
-	while (temp1 != NULL)
+	if ((*head) != NULL)
 	{
-		temp2 = temp1;
-		temp1 = temp1->next;
-		free(temp2);
+		temp1 = (*head)->next;
+		while (temp1 != NULL)
+		{
+			temp2 = temp1;
+			temp1 = temp1->next;
+			free(temp2);
+		}
+		free(*head);
+		(*head) = NULL;
 	}
-	free(*head);
-	(*head) = NULL;
 }
