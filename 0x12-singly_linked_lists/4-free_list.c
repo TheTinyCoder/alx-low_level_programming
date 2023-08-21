@@ -7,7 +7,7 @@
  *
  * Description: frees a list_t list
  * @head: pointer to singly linked list
- * Return: address of node added to linked list
+ * Return: void
  */
 
 void free_list(list_t *head)
