@@ -3,7 +3,7 @@
 #include "string.h"
 
 /**
- * get_nodeint_at - function entry-point
+ * get_nodeint_at_index - function entry-point
  *
  * Description: gets nth node of a listint_t list
  * @head: pointer to singly linked list
