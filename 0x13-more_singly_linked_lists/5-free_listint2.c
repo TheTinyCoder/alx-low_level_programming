@@ -14,7 +14,7 @@ void free_listint2(listint_t **head)
 {
 	nodePtr temp1, temp2;
 
-	if ((*head) != NULL)
+	if (head != NULL)
 	{
 		temp1 = (*head)->next;
 		while (temp1 != NULL)
