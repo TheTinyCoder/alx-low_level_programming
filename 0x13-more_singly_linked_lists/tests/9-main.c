@@ -64,7 +64,7 @@ void _free_listint(listint_t *list)
  */
 int main(void)
 {
-    listint_t *head, *head1, *head2, *head3, *n;
+    listint_t *head, *head1, *head2, *head3;
 
     head = head1 = NULL;
     head2 = _create_list(1, 9);
@@ -87,11 +87,7 @@ int main(void)
 
     printf("(nil)\n");
     printf("-----------------\n");
-    n = insert_nodeint_at_index(&head1, 0, 98);
-    if (n)
-            printf("-> %d\n", n->n);
-    else
-            printf("(nil)\n");
+    insert_nodeint_at_index(&head1, 0, 98);
     print_listint(head1);
     free_listint2(&head1);
     printf("end\n");
