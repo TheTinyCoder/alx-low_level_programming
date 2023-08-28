@@ -3,6 +3,26 @@
 #include "string.h"
 
 /**
+ * create_node - function entry-point
+ *
+ * Description: creates a new node
+ * @n: data for the node
+ * Return: new node
+ */
+
+listint_t *create_node(int n)
+{
+	nodePtr new;
+
+	new = malloc(sizeof(listint_t));
+	if (new == NULL)
+		return (NULL);
+	new->n = n;
+	return (new);
+}
+
+
+/**
  * insert_nodeint_at_index - function entry-point
  *
  * Description: inserts node at index n of a listint_t list
@@ -14,26 +34,12 @@
 
 listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 {
-	nodePtr new, temp, nodes;
-	unsigned int i = 0, nodes_len = 0;
+	nodePtr new, temp;
+	unsigned int i = 0;
 
-	nodes = *head;
-	while (nodes)
-	{
-		nodes = nodes->next;
-		nodes_len++;
-	}
-	if (nodes_len < idx)
-	{
-		free(nodes);
-		return (NULL);
-	}
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-		return (NULL);
-	new->n = n;
 	if (idx == 0)
 	{
+		new = create_node(n);
 		new->next = *head == NULL ? NULL : *head, *head = new;
 		return (*head);
 	}
@@ -42,11 +48,12 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	{
 		if (i == idx - 1)
 		{
+			new = create_node(n);
 			new->next = temp->next, temp->next = new;
-			break;
+			return (new);
 		}
 		temp = temp->next;
 		i++;
 	}
-	return (temp);
+	return (NULL);
 }
