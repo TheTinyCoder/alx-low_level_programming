@@ -16,10 +16,8 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	nodePtr temp1, temp2;
 	unsigned int i = 0;
 
-	if (index == 0)
+	if (index == 0 && *head)
 	{
-		if (!*head)
-			return (1);
 		temp1 = *head, *head = (*head)->next, free(temp1);
 		return (1);
 	}
