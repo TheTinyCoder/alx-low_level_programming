@@ -2,27 +2,26 @@
 #include "stdio.h"
 
 /**
- * find_loop - function entry-point
+ * find_loopnode - function entry-point
  *
- * Description: finds a loop in a linked list
+ * Description: finds node where a loop starts in a linked list
  * @head: pointer to singly linked list
- * @node: node (to check if its address is repeated)
- * @n: index position of node;
- * Return: 1 if loop is found, 0 otherwise
+ * Return: address of node if loop is found, NULL otherwise
  */
 
-size_t find_loop(const listint_t *head, const listint_t *node, size_t n)
+const listint_t *find_loopnode(const listint_t *head)
 {
-	const listint_t *temp;
-	size_t idx = 0;
+	const listint_t *temp, *temp1;
 
-	for (temp = head; temp && idx <= n; temp = temp->next)
+	for (temp = head->next; temp; temp = temp->next)
 	{
-		if (temp == node)
-			return (1);
-		idx++;
+		for (temp1 = head; temp1 != temp; temp1 = temp1->next)
+		{
+			if (temp1 == temp->next)
+				return (temp);
+		}
 	}
-	return (0);
+	return (NULL);
 }
 
 
@@ -36,22 +35,20 @@ size_t find_loop(const listint_t *head, const listint_t *node, size_t n)
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *temp;
-	size_t count = 0, loop;
-
+	const listint_t *loop_node, *temp;
+	size_t count = 0;
+	if (!head)
+		exit(98);
+	loop_node = find_loopnode(head);
 	for (temp = head; temp; temp = temp->next)
 	{
-		loop = find_loop(head, temp->next, count);
-		if (loop == 0)
-			printf("[%p] %d\n", (void *)temp, temp->n);
-		else
-		{
-			printf("[%p] %d\n", (void *)temp, temp->n);
-			printf("-> [%p] %d\n", (void *)temp->next, temp->next->n);
-			break;
-		}
 		count++;
-
+		printf("[%p] %d\n", (void *)temp, temp->n);
+		if (temp == loop_node)
+			break;
 	}
-	return (count + 1);
+	printf("%lu\n", count);
+	if (loop_node)
+		printf("-> [%p] %d\n", (void *)loop_node->next, loop_node->next->n);
+	return (count);
 }
