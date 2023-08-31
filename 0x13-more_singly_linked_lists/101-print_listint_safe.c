@@ -37,10 +37,11 @@ const listint_t *find_loopnode(const listint_t *head)
 
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *loop_node, *temp;
+	const listint_t *loop_node = NULL, *temp;
 	size_t count = 0;
 
-	loop_node = find_loopnode(head);
+	if (head)
+		loop_node = find_loopnode(head);
 	for (temp = head; temp; temp = temp->next)
 	{
 		count++;
