@@ -47,7 +47,6 @@ size_t print_listint_safe(const listint_t *head)
 		if (temp == loop_node)
 			break;
 	}
-	printf("%lu\n", count);
 	if (loop_node)
 		printf("-> [%p] %d\n", (void *)loop_node->next, loop_node->next->n);
 	return (count);
