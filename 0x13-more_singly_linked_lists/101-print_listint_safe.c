@@ -39,7 +39,7 @@ size_t find_loop(const listint_t *head, const listint_t *node, size_t n)
 size_t print_listint_safe(const listint_t *head)
 {
 	const listint_t *temp;
-	size_t idx = 0, loop;
+	size_t idx = 0, loop = 0;
 
 	for (temp = head; temp; temp = temp->next)
 	{
@@ -54,5 +54,6 @@ size_t print_listint_safe(const listint_t *head)
 		}
 		idx++;
 	}
-	return (idx + 1);
+	idx = loop ? idx + 1 : idx;
+	return (idx);
 }
