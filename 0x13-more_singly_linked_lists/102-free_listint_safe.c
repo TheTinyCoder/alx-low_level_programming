@@ -45,12 +45,12 @@ size_t free_listint_safe(listint_t **head)
 	while (temp)
 	{
 		count++;
-		temp1 = temp;
 		if (temp == loop_node)
 		{
 			free(temp);
 			break;
 		}
+		temp1 = temp;
 		temp = temp->next;
 		free(temp1);
 	}
