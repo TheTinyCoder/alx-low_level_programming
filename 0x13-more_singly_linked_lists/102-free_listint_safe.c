@@ -37,10 +37,10 @@ listint_t *find_loopnode(listint_t *head)
 
 size_t free_listint_safe(listint_t **head)
 {
-	nodePtr loop_node = NULL, temp = (*head)->next, temp1;
+	nodePtr loop_node = NULL, temp = *head, temp1;
 	size_t count = 0;
 
-	if (head)
+	if (*head)
 		loop_node = find_loopnode(*head);
 	while (temp)
 	{

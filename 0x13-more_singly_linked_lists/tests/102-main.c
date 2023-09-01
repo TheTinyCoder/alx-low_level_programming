@@ -12,7 +12,9 @@ int main(void)
 {
     listint_t *head;
     listint_t *head2;
+    listint_t *head3;
     listint_t *node;
+    size_t n;
 
     head2 = NULL;
     add_nodeint(&head2, 0);
@@ -37,5 +39,9 @@ int main(void)
     free_listint_safe(&head2);
     free_listint_safe(&head);
     printf("%p, %p\n", (void *)head2, (void *)head);
+
+    head3 = NULL;
+    n = free_listint_safe(&head3);
+    printf("%lu\n%p\n", n, (void *)head3);
     return (0);
 }
