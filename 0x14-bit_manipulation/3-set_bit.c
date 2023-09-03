@@ -31,18 +31,18 @@ unsigned long int _pow(unsigned long int x, unsigned long int y)
 
 int set_bit(unsigned long int *n, unsigned int index)
 {
-	unsigned long int j, k = *n;
+	unsigned long int j;
 
 	for (j = 0; j <= index && index < 64; j++)
 	{
-		if (k == 1 && index > j)
-			return (-1);
+		/*if (k == 1 && index > j)
+			return (-1);*/
 		if (j == index)
 		{
 			*n = *n | _pow(2, j);
 			return (1);
 		}
-		k /= 2;
+		/*k /= 2;*/
 	}
 
 	return (-1);
