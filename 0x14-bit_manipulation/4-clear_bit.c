@@ -36,7 +36,7 @@ int clear_bit(unsigned long int *n, unsigned int index)
 	for (j = 0; j <= index && index < 64; j++)
 	{
 		if (k == 1 && index > j)
-			break;
+			return (-1);
 		if (j == index && k % 2 != 0)
 		{
 			*n = *n ^ _pow(2, j);
