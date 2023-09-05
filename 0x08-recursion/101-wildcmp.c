@@ -5,8 +5,8 @@
  * wildcmp - function entry-point
  *
  * Description: compares two strings
- * s1: string
- * s2: string (that can contain the special character '*')
+ * @s1: string
+ * @s2: string (that can contain the special character '*')
  * Return: 1 if the strings can be considered identical, 0 otherwise
  */
 
