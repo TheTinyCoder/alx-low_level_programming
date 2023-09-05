@@ -7,7 +7,7 @@
  *
  * Description: checks if all values in array are numbers
  * @arr: array
- * Return: length of array or 1 (if digit is 0), 0 otherwise
+ * Return: length of array, 0 otherwise
  */
 
 int is_digit(char *arr)
@@ -19,10 +19,6 @@ int is_digit(char *arr)
 		if (arr[i] < 48 || arr[i] > 57)
 			return (0);
 	}
-	/*
-	 * if (arr[0] == 0)
-		return (1);
-		*/
 	return (i);
 }
 
