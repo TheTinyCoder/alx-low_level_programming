@@ -87,7 +87,7 @@ int **mul(int *num1, int num1_len, int *num2, int num2_len)
 			if (index_1 >= 0)
 			{
 				matrix[x][y] = ((num1[index_1] * num2[index_2]) + temp) % 10;
-				temp = (num1[index_1] * num2[index_2]) / 10;
+				temp = ((num1[index_1] * num2[index_2]) + temp) / 10;
 			}
 			index_1--;
 		}
