@@ -3,7 +3,7 @@
 ### 0. Multiple mains
 - In most projects, we often give you only one main file to test with. For example, this main file is a test for a postitive_or_negative() function similar to the one you worked with in an [earlier C project](../0x01-variables_if_else_while/0-positive_or_negative.c):
 
-   - **main.c**:
+ - **main.c**:
    ```
     carrie@ubuntu:/debugging$ cat main.c
     #include "main.h"
@@ -47,15 +47,15 @@
    - You only need to upload _0-main.c_ and _main.h_ for this task. We will provide our own positive_or_negative() function.
    - You are **not allowed to add or remove lines of code**, you may **change only one line** in this task.
 
-  Example:
-  ```
-  carrie@ubuntu:/debugging$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 positive_or_negative.c 0-main.c -o 0-main
-  carrie@ubuntu:/debugging$ ./0-main
-  0 is zero
-  carrie@ubuntu:/debugging$ wc -l 0-main.c
-  16 1-main.c
-  carrie@ubuntu:/debugging$ 
-  ```
+   Example:
+   ```
+   carrie@ubuntu:/debugging$ gcc -Wall -pedantic -Werror -Wextra -std=gnu89 positive_or_negative.c 0-main.c -o 0-main
+   carrie@ubuntu:/debugging$ ./0-main
+   0 is zero
+   carrie@ubuntu:/debugging$ wc -l 0-main.c
+   16 1-main.c
+   carrie@ubuntu:/debugging$ 
+   ```
 
 ### 1. Like, comment, subscribe
 - Copy this main file. Comment out (don’t delete it!) the part of the code that is causing the output to go into an infinite loop.
@@ -92,7 +92,8 @@
   }
   carrie@ubuntu:/debugging$
   ```
- - Your output should look like this:
+  Your output should look like this:
+  
   ```
   carrie@ubuntu:/debugging$ gcc -std=gnu89 1-main.c -o 1-main
   carrie@ubuntu:/debugging$ ./1-main
@@ -174,9 +175,9 @@
   0 is the largest number
   carrie@ubuntu:/debugging$
   ```
- - ? That’s **definitely not right**.
- - Fix the code in _2-largest_number.c_ so that it correctly prints out the largest of three numbers, no matter the case.
- - Line count will not be checked for this task.
+   - ? That’s **definitely not right**.
+   - Fix the code in _2-largest_number.c_ so that it correctly prints out the largest of three numbers, no matter the case.
+   - Line count will not be checked for this task.
 
 ### 3. Leap year
 - This program converts a date to the day of year and determines how many days are left in the year, taking leap year into consideration.
@@ -334,8 +335,8 @@
   Invalid date: 02/29/2000
   carrie@ubuntu:/debugging$
   ```
- - ? That doesn’t seem right.
- - Fix the `print_remaining_days()` function so that the output works correctly for all dates and all leap years.
- - Line count will not be checked for this task.
- - You can **assume that all test cases have valid months** (i.e. the value of month will never be less than 1 or greater than 12) and valid days (i.e. the value of day will never be less than 1 or greater than 31).
- - You can **assume that all test cases have valid month/day combinations** (i.e. there will never be a June 31st or November 31st, etc.), but not all month/day/year combinations are valid (i.e. February 29, 1991 or February 29, 2427).
+   - ? That doesn’t seem right.
+   - Fix the `print_remaining_days()` function so that the output works correctly for all dates and all leap years.
+   - Line count will not be checked for this task.
+   - You can **assume that all test cases have valid months** (i.e. the value of month will never be less than 1 or greater than 12) and valid days (i.e. the value of day will never be less than 1 or greater than 31).
+   - You can **assume that all test cases have valid month/day combinations** (i.e. there will never be a June 31st or November 31st, etc.), but not all month/day/year combinations are valid (i.e. February 29, 1991 or February 29, 2427).
