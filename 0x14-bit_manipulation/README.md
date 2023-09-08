@@ -90,7 +90,7 @@
   julien@ubuntu:~/0x14. Binary$ 
   ```
 
-2. 10
+### 2. 10
 - Write a function that returns the value of a bit at a given index.
 
    - Prototype: `int get_bit(unsigned long int n, unsigned int index);`
