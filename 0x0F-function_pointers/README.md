@@ -306,7 +306,7 @@
   ```
 
 ### 4. Most hackers are young because young people tend to be adaptable. As long as you remain adaptable, you can always be a good hacker
-- Write a program that prints the opcodes of its own main function.
+- Write a program that prints the [opcodes](https://en.wikipedia.org/wiki/Opcode) of its own main function.
 
    - Usage: `./main number_of_bytes`
    - Output format:
