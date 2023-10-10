@@ -20,4 +20,16 @@ char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
+
+/* add: returns the sum of a and b. */
+int add(int a, int b);
+/* sub: returns the difference of a and b. */
+int sub(int a, int b);
+/* mul: returns the product of a and b. */
+int mul(int a, int b);
+/* div: returns the result of the division of a by b. */
+int div(int a, int b);
+/* mod: returns the remainder of the division of a by b. */
+int mod(int a, int b);
+
 #endif
