@@ -16,5 +16,5 @@ int rand(void)
 
 	if (count < 6)
 		return (numbers[count++]);
-	return (numbers[5]);
+	return (count * count % 30000);
 }
