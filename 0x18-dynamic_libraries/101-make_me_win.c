@@ -3,7 +3,7 @@
 int rand()
 {
 	static int count = -1;
-	int numbers[6] = {9, 8, 10, 24, 75, 9};
+	int numbers[6] = {9, 5, 70, 47, 65, 8};
 
 	if (count < 6)
 		return (numbers[count++]);
